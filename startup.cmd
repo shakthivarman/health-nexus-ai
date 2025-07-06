@@ -1,0 +1,3 @@
+@echo off
+echo Starting Health Nexus AI application...
+node server.js

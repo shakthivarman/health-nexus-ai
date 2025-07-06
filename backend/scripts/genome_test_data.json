@@ -1,0 +1,476 @@
+{
+  "resourceType": "Bundle",
+  "id": "genomics-sample-patients",
+  "type": "collection",
+  "timestamp": "2025-07-04T10:00:00Z",
+  "entry": [
+    {
+      "fullUrl": "http://example.org/fhir/Patient/patient-001",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-001",
+        "identifier": [{"system": "http://hospital.org/patient-id", "value": "GEN001"}],
+        "name": [{"family": "Johnson", "given": ["Sarah", "Marie"]}],
+        "gender": "female",
+        "birthDate": "1985-03-15",
+        "address": [{"city": "Boston", "state": "MA", "country": "USA"}]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/variant-001-brca1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "variant-001-brca1",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "laboratory"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "69548-6", "display": "Genetic variant assessment"}]},
+        "subject": {"reference": "Patient/patient-001"},
+        "effectiveDateTime": "2025-06-15",
+        "valueCodeableConcept": {"coding": [{"system": "http://loinc.org", "code": "LA9633-4", "display": "Present"}]},
+        "component": [
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "48018-6", "display": "Gene studied [ID]"}]}, "valueCodeableConcept": {"coding": [{"system": "http://www.genenames.org", "code": "HGNC:1100", "display": "BRCA1"}]}},
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "53037-8", "display": "Genetic variation clinical significance [Imp]"}]}, "valueCodeableConcept": {"coding": [{"system": "http://loinc.org", "code": "LA6668-3", "display": "Pathogenic"}]}}
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Patient/patient-002",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-002",
+        "identifier": [{"system": "http://hospital.org/patient-id", "value": "GEN002"}],
+        "name": [{"family": "Chen", "given": ["Michael", "Wei"]}],
+        "gender": "male",
+        "birthDate": "1978-11-22",
+        "address": [{"city": "San Francisco", "state": "CA", "country": "USA"}]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/pharmacogenomics-002",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "pharmacogenomics-002",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "laboratory"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "51963-7", "display": "Medication assessed [ID]"}]},
+        "subject": {"reference": "Patient/patient-002"},
+        "effectiveDateTime": "2025-06-20",
+        "valueCodeableConcept": {"coding": [{"system": "http://www.nlm.nih.gov/research/umls/rxnorm", "code": "11289", "display": "Warfarin"}]},
+        "component": [
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "48018-6", "display": "Gene studied [ID]"}]}, "valueCodeableConcept": {"coding": [{"system": "http://www.genenames.org", "code": "HGNC:2621", "display": "CYP2C9"}]}},
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "51971-0", "display": "Predicted phenotype"}]}, "valueCodeableConcept": {"coding": [{"system": "http://pharmvar.org", "code": "poor-metabolizer", "display": "Poor Metabolizer"}]}},
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "LA6684-0", "display": "Therapeutic implication"}]}, "valueString": "Reduced warfarin dosing recommended. Start with 50% of standard dose."}
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Patient/patient-003",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-003",
+        "identifier": [{"system": "http://hospital.org/patient-id", "value": "GEN003"}],
+        "name": [{"family": "Rodriguez", "given": ["Maria", "Elena"]}],
+        "gender": "female",
+        "birthDate": "1992-07-08",
+        "address": [{"city": "Miami", "state": "FL", "country": "USA"}]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/risk-assessment-003",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "risk-assessment-003",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "survey"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "72133-2", "display": "Cancer risk assessment"}]},
+        "subject": {"reference": "Patient/patient-003"},
+        "effectiveDateTime": "2025-06-25",
+        "valueQuantity": {"value": 15.2, "unit": "%", "system": "http://unitsofmeasure.org", "code": "%"},
+        "component": [
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "53037-8", "display": "Genetic variation clinical significance [Imp]"}]}, "valueCodeableConcept": {"coding": [{"system": "http://loinc.org", "code": "LA6668-3", "display": "Pathogenic"}]}},
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "48002-0", "display": "Genomic source class [Type]"}]}, "valueCodeableConcept": {"coding": [{"system": "http://loinc.org", "code": "LA6683-2", "display": "Germline"}]}}
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Patient/patient-004",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-004",
+        "identifier": [{"system": "http://hospital.org/patient-id", "value": "GEN004"}],
+        "name": [{"family": "Thompson", "given": ["Robert", "James"]}],
+        "gender": "male",
+        "birthDate": "1965-12-03",
+        "address": [{"city": "Chicago", "state": "IL", "country": "USA"}]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/variant-004-cftr",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "variant-004-cftr",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "laboratory"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "69548-6", "display": "Genetic variant assessment"}]},
+        "subject": {"reference": "Patient/patient-004"},
+        "effectiveDateTime": "2025-06-30",
+        "valueCodeableConcept": {"coding": [{"system": "http://loinc.org", "code": "LA9633-4", "display": "Present"}]},
+        "component": [
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "48018-6", "display": "Gene studied [ID]"}]}, "valueCodeableConcept": {"coding": [{"system": "http://www.genenames.org", "code": "HGNC:1884", "display": "CFTR"}]}},
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "48005-3", "display": "Amino acid change (pHGVS)"}]}, "valueCodeableConcept": {"coding": [{"system": "http://varnomen.hgvs.org", "code": "p.Phe508del", "display": "p.Phe508del"}]}},
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "53034-5", "display": "Allelic state"}]}, "valueCodeableConcept": {"coding": [{"system": "http://loinc.org", "code": "LA6705-3", "display": "Homozygous"}]}}
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Patient/patient-005",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-005",
+        "identifier": [{"system": "http://hospital.org/patient-id", "value": "GEN005"}],
+        "name": [{"family": "Anderson", "given": ["Jennifer", "Lynn"]}],
+        "gender": "female",
+        "birthDate": "1988-09-14",
+        "address": [{"city": "Seattle", "state": "WA", "country": "USA"}]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/hla-typing-005",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "hla-typing-005",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "laboratory"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "57290-9", "display": "HLA typing"}]},
+        "subject": {"reference": "Patient/patient-005"},
+        "effectiveDateTime": "2025-07-01",
+        "component": [
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "57291-7", "display": "HLA-A [Type]"}]}, "valueCodeableConcept": {"coding": [{"system": "http://www.ebi.ac.uk/ipd/imgt/hla", "code": "HLA-A*02:01", "display": "HLA-A*02:01"}]}},
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "57292-5", "display": "HLA-B [Type]"}]}, "valueCodeableConcept": {"coding": [{"system": "http://www.ebi.ac.uk/ipd/imgt/hla", "code": "HLA-B*07:02", "display": "HLA-B*07:02"}]}},
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "57293-3", "display": "HLA-C [Type]"}]}, "valueCodeableConcept": {"coding": [{"system": "http://www.ebi.ac.uk/ipd/imgt/hla", "code": "HLA-C*07:02", "display": "HLA-C*07:02"}]}}
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Patient/patient-006",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-006",
+        "identifier": [{"system": "http://hospital.org/patient-id", "value": "GEN006"}],
+        "name": [{"family": "Williams", "given": ["David", "Andrew"]}],
+        "gender": "male",
+        "birthDate": "1973-04-28",
+        "address": [{"city": "Houston", "state": "TX", "country": "USA"}]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/copy-number-006",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "copy-number-006",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "laboratory"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "82121-5", "display": "Allelic read depth"}]},
+        "subject": {"reference": "Patient/patient-006"},
+        "effectiveDateTime": "2025-07-02",
+        "valueQuantity": {"value": 3, "unit": "copies", "system": "http://unitsofmeasure.org", "code": "1"},
+        "component": [
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "48018-6", "display": "Gene studied [ID]"}]}, "valueCodeableConcept": {"coding": [{"system": "http://www.genenames.org", "code": "HGNC:11389", "display": "SMN1"}]}},
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "48019-4", "display": "DNA change (c.HGVS)"}]}, "valueCodeableConcept": {"coding": [{"system": "http://varnomen.hgvs.org", "code": "c.840C>T", "display": "c.840C>T"}]}}
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Patient/patient-007",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-007",
+        "identifier": [{"system": "http://hospital.org/patient-id", "value": "GEN007"}],
+        "name": [{"family": "Brown", "given": ["Lisa", "Marie"]}],
+        "gender": "female",
+        "birthDate": "1980-01-19",
+        "address": [{"city": "Phoenix", "state": "AZ", "country": "USA"}]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/ancestry-007",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "ancestry-007",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "survey"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "69490-1", "display": "Ancestry analysis"}]},
+        "subject": {"reference": "Patient/patient-007"},
+        "effectiveDateTime": "2025-07-03",
+        "component": [
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "69487-7", "display": "European ancestry percentage"}]}, "valueQuantity": {"value": 65.2, "unit": "%", "system": "http://unitsofmeasure.org", "code": "%"}},
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "69488-5", "display": "African ancestry percentage"}]}, "valueQuantity": {"value": 22.1, "unit": "%", "system": "http://unitsofmeasure.org", "code": "%"}},
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "69489-3", "display": "Asian ancestry percentage"}]}, "valueQuantity": {"value": 12.7, "unit": "%", "system": "http://unitsofmeasure.org", "code": "%"}}
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Patient/patient-008",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-008",
+        "identifier": [{"system": "http://hospital.org/patient-id", "value": "GEN008"}],
+        "name": [{"family": "Garcia", "given": ["Carlos", "Manuel"]}],
+        "gender": "male",
+        "birthDate": "1995-08-07",
+        "address": [{"city": "Los Angeles", "state": "CA", "country": "USA"}]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/somatic-variant-008",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "somatic-variant-008",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "laboratory"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "69548-6", "display": "Genetic variant assessment"}]},
+        "subject": {"reference": "Patient/patient-008"},
+        "effectiveDateTime": "2025-07-04",
+        "valueCodeableConcept": {"coding": [{"system": "http://loinc.org", "code": "LA9633-4", "display": "Present"}]},
+        "component": [
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "48018-6", "display": "Gene studied [ID]"}]}, "valueCodeableConcept": {"coding": [{"system": "http://www.genenames.org", "code": "HGNC:11998", "display": "TP53"}]}},
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "48002-0", "display": "Genomic source class [Type]"}]}, "valueCodeableConcept": {"coding": [{"system": "http://loinc.org", "code": "LA6684-0", "display": "Somatic"}]}},
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "48005-3", "display": "Amino acid change (pHGVS)"}]}, "valueCodeableConcept": {"coding": [{"system": "http://varnomen.hgvs.org", "code": "p.Arg248Gln", "display": "p.Arg248Gln"}]}},
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "53037-8", "display": "Genetic variation clinical significance [Imp]"}]}, "valueCodeableConcept": {"coding": [{"system": "http://loinc.org", "code": "LA6668-3", "display": "Pathogenic"}]}}
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Patient/patient-009",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-009",
+        "identifier": [{"system": "http://hospital.org/patient-id", "value": "GEN009"}],
+        "name": [{"family": "Miller", "given": ["Amanda", "Rose"]}],
+        "gender": "female",
+        "birthDate": "1987-05-12",
+        "address": [{"city": "Denver", "state": "CO", "country": "USA"}]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/FamilyMemberHistory/family-009",
+      "resource": {
+        "resourceType": "FamilyMemberHistory",
+        "id": "family-009",
+        "status": "completed",
+        "patient": {"reference": "Patient/patient-009"},
+        "date": "2025-07-04",
+        "relationship": {"coding": [{"system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode", "code": "MTH", "display": "mother"}]},
+        "sex": {"coding": [{"system": "http://hl7.org/fhir/administrative-gender", "code": "female", "display": "Female"}]},
+        "bornPeriod": {"start": "1960", "end": "1965"},
+        "condition": [
+          {
+            "code": {"coding": [{"system": "http://snomed.info/sct", "code": "254837009", "display": "Malignant neoplasm of breast"}]},
+            "onsetAge": {"value": 45, "unit": "years", "system": "http://unitsofmeasure.org", "code": "a"}
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/polygenic-risk-009",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "polygenic-risk-009",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "survey"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "72133-2", "display": "Cancer risk assessment"}]},
+        "subject": {"reference": "Patient/patient-009"},
+        "effectiveDateTime": "2025-07-04",
+        "valueQuantity": {"value": 85.6, "unit": "percentile", "system": "http://unitsofmeasure.org", "code": "%"},
+        "component": [
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "LA25391-6", "display": "Polygenic risk score"}]}, "valueQuantity": {"value": 2.34, "unit": "score", "system": "http://unitsofmeasure.org", "code": "1"}},
+          {"code": {"coding": [{"system": "http://loinc.org", "code": "LA6156-9", "display": "Population studied"}]}, "valueCodeableConcept": {"coding": [{"system": "http://snomed.info/sct", "code": "413490006", "display": "European population"}]}}
+        ],
+        "derivedFrom": [{"reference": "FamilyMemberHistory/family-009"}]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Patient/patient-010",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-010",
+        "identifier": [{"system": "http://hospital.org/patient-id", "value": "GEN010"}],
+        "name": [{"family": "Wilson", "given": ["Christopher", "Lee"]}],
+        "gender": "male",
+        "birthDate": "1990-10-25",
+        "address": [{"city": "Atlanta", "state": "GA", "country": "USA"}]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/MolecularSequence/seq-001",
+      "resource": {
+        "resourceType": "MolecularSequence",
+        "id": "seq-001",
+        "type": "dna",
+        "coordinateSystem": 1,
+        "patient": { "reference": "Patient/patient-001" },
+        "referenceSeq": {
+          "chromosome": {
+            "coding": [
+              { "system": "http://terminology.hl7.org/CodeSystem/chromosome-human", "code": "17", "display": "chromosome 17" }
+            ]
+          },
+          "genomeBuild": "GRCh38",
+          "orientation": "sense",
+          "referenceSeqId": {
+            "coding": [
+              { "system": "http://www.ncbi.nlm.nih.gov/nuccore", "code": "NC_000017.11" }
+            ]
+          },
+          "windowStart": 43044294,
+          "windowEnd": 43125483
+        },
+        "variant": [
+          {
+            "start": 43104121,
+            "end": 43104122,
+            "observedAllele": "A",
+            "referenceAllele": "G",
+            "cigar": "1M"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/MolecularSequence/seq-004",
+      "resource": {
+        "resourceType": "MolecularSequence",
+        "id": "seq-004",
+        "type": "dna",
+        "coordinateSystem": 1,
+        "patient": { "reference": "Patient/patient-004" },
+        "referenceSeq": {
+          "chromosome": { "coding": [ { "system": "http://terminology.hl7.org/CodeSystem/chromosome-human", "code": "7", "display": "chromosome 7" } ] },
+          "genomeBuild": "GRCh38",
+          "orientation": "sense",
+          "referenceSeqId": { "coding": [ { "system": "http://www.ncbi.nlm.nih.gov/nuccore", "code": "NC_000007.14" } ] },
+          "windowStart": 117559593,
+          "windowEnd": 117559595
+        },
+        "variant": [ { "start": 117559593, "end": 117559595, "observedAllele": "-", "referenceAllele": "CTT", "cigar": "3D" } ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/MolecularSequence/seq-008",
+      "resource": {
+        "resourceType": "MolecularSequence",
+        "id": "seq-008",
+        "type": "dna",
+        "coordinateSystem": 1,
+        "patient": { "reference": "Patient/patient-008" },
+        "referenceSeq": {
+          "chromosome": { "coding": [ { "system": "http://terminology.hl7.org/CodeSystem/chromosome-human", "code": "17", "display": "chromosome 17" } ] },
+          "genomeBuild": "GRCh38",
+          "orientation": "sense",
+          "referenceSeqId": { "coding": [ { "system": "http://www.ncbi.nlm.nih.gov/nuccore", "code": "NC_000017.11" } ] },
+          "windowStart": 7675080,
+          "windowEnd": 7675081
+        },
+        "variant": [ { "start": 7675080, "end": 7675081, "observedAllele": "G", "referenceAllele": "C", "cigar": "1M" } ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/pharmacogenomics-001",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "pharmacogenomics-001",
+        "status": "final",
+        "category": [
+          { "coding": [ { "system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "laboratory" } ] }
+        ],
+        "code": { "coding": [ { "system": "http://loinc.org", "code": "51963-7", "display": "Medication assessed [ID]" } ] },
+        "subject": { "reference": "Patient/patient-002" },
+        "effectiveDateTime": "2025-06-20",
+        "valueCodeableConcept": { "coding": [ { "system": "http://www.nlm.nih.gov/research/umls/rxnorm", "code": "11289", "display": "Warfarin" } ] },
+        "component": [
+          {
+            "code": { "coding": [ { "system": "http://loinc.org", "code": "48018-6", "display": "Gene studied [ID]" } ] },
+            "valueCodeableConcept": { "coding": [ { "system": "http://www.genenames.org", "code": "HGNC:2621", "display": "CYP2C9" } ] }
+          },
+          {
+            "code": { "coding": [ { "system": "http://loinc.org", "code": "51971-0", "display": "Predicted phenotype" } ] },
+            "valueCodeableConcept": { "coding": [ { "system": "http://pharmvar.org", "code": "poor-metabolizer", "display": "Poor Metabolizer" } ] }
+          },
+          {
+            "code": { "coding": [ { "system": "http://loinc.org", "code": "LA6684-0", "display": "Therapeutic implication" } ] },
+            "valueString": "Reduced warfarin dosing recommended. Start with 50% of standard dose."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/mitochondrial-variant-010",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "mitochondrial-variant-010",
+        "status": "final",
+        "category": [
+          { "coding": [ { "system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "laboratory" } ] }
+        ],
+        "code": { "coding": [ { "system": "http://loinc.org", "code": "69548-6", "display": "Genetic variant assessment" } ] },
+        "subject": { "reference": "Patient/patient-010" },
+        "effectiveDateTime": "2025-07-04",
+        "valueCodeableConcept": { "coding": [ { "system": "http://loinc.org", "code": "LA9633-4", "display": "Present" } ] },
+        "component": [
+          {
+            "code": { "coding": [ { "system": "http://loinc.org", "code": "48013-7", "display": "Genomic reference sequence [ID]" } ] },
+            "valueCodeableConcept": { "coding": [ { "system": "http://www.ncbi.nlm.nih.gov/nuccore", "code": "NC_012920.1", "display": "Mitochondrial genome" } ] }
+          },
+          {
+            "code": { "coding": [ { "system": "http://loinc.org", "code": "48019-4", "display": "DNA change (c.HGVS)" } ] },
+            "valueCodeableConcept": { "coding": [ { "system": "http://varnomen.hgvs.org", "code": "m.8993T>G", "display": "m.8993T>G" } ] }
+          },
+          {
+            "code": { "coding": [ { "system": "http://loinc.org", "code": "48018-6", "display": "Gene studied [ID]" } ] },
+            "valueCodeableConcept": { "coding": [ { "system": "http://www.genenames.org", "code": "HGNC:7417", "display": "MT-ATP6" } ] }
+          },
+          {
+            "code": { "coding": [ { "system": "http://loinc.org", "code": "53037-8", "display": "Genetic variation clinical significance [Imp]" } ] },
+            "valueCodeableConcept": { "coding": [ { "system": "http://loinc.org", "code": "LA6668-3", "display": "Pathogenic" } ] }
+          },
+          {
+            "code": { "coding": [ { "system": "http://loinc.org", "code": "48002-0", "display": "Genomic source class [Type]" } ] },
+            "valueCodeableConcept": { "coding": [ { "system": "http://loinc.org", "code": "LA26332-9", "display": "Mitochondrial" } ] }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/DiagnosticReport/genomics-report-001",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "genomics-report-001",
+        "status": "final",
+        "category": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/v2-0074", "code": "GE", "display": "Genetics"}]}],
+        "code": {"coding": [{"system": "http://loinc.org", "code": "81247-9", "display": "Master HL7 genetic variant reporting panel"}]},
+        "subject": {"reference": "Patient/patient-001"},
+        "effectiveDateTime": "2025-06-15",
+        "issued": "2025-06-16T09:30:00Z",
+        "performer": [{"reference": "Organization/genomics-lab"}],
+        "result": [{"reference": "Observation/variant-001-brca1"}],
+        "conclusion": "Heterozygous pathogenic variant identified in BRCA1 gene. Increased risk for hereditary breast and ovarian cancer. Genetic counseling and enhanced screening recommended."
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Organization/genomics-lab",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "genomics-lab",
+        "identifier": [{"system": "http://hl7.org/fhir/sid/us-npi", "value": "1234567890"}],
+        "active": true,
+        "type": [{"coding": [{"system": "http://terminology.hl7.org/CodeSystem/organization-type", "code": "other", "display": "Other"}]}],
+        "name": "Advanced Genomics Laboratory",
+        "telecom": [
+          {"system": "phone", "value": "+1-555-0123"},
+          {"system": "email", "value": "lab@genomicslab.org"}
+        ],
+        "address": [{"line": ["456 Laboratory Drive"], "city": "Boston", "state": "MA", "postalCode": "02101", "country": "USA"}]
+      }
+    }
+  ]
+}
